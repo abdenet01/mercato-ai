@@ -602,3 +602,149 @@ alert(
 
 
 }
+// ================================
+// LANGUAGE SYSTEM
+// ================================
+
+
+const languageSelect = document.getElementById("language-select");
+
+
+if(languageSelect){
+
+
+languageSelect.addEventListener("change", function(){
+
+
+let language = this.value;
+
+
+
+if(language === "am"){
+
+changeLanguage("am");
+
+}
+
+
+else if(language === "om"){
+
+changeLanguage("om");
+
+}
+
+
+else{
+
+changeLanguage("en");
+
+}
+
+
+
+});
+
+
+}
+
+
+
+function changeLanguage(lang){
+
+
+
+const title = document.querySelector(".hero h1");
+
+const description = document.querySelector(".description");
+
+const tag = document.querySelector(".tag");
+
+const startButton = document.querySelector(".primary");
+
+const sellerButton = document.querySelector(".secondary");
+
+
+
+
+
+if(lang==="am"){
+
+
+tag.innerHTML="🤖 በ AI የሚሰራ የኢትዮጵያ ገበያ";
+
+
+title.innerHTML=
+"በመርካቶ ማንኛውንም ነገር <span>በ AI</span> ያግኙ";
+
+
+
+description.innerHTML=
+"Mercato AI ገዢዎችን ምርቶችን በፍጥነት እንዲያገኙ እና ነጋዴዎችን በ AI ንግዳቸውን እንዲያስተዳድሩ ይረዳል";
+
+
+startButton.innerHTML="መግዛት ጀምር";
+
+
+sellerButton.innerHTML="ሻጭ ሁን";
+
+
+}
+
+
+
+
+else if(lang==="om"){
+
+
+
+tag.innerHTML="🤖 Gabaa Itoophiyaa AI'n hojjetamu";
+
+
+title.innerHTML=
+"Waan barbaadde Mercato keessatti <span>AI</span> waliin argadhu";
+
+
+
+description.innerHTML=
+"Mercato AI bittoota oomisha argachuuf fi daldaltoota hojii isaanii AI fayyadamuun bulchuuf gargaara";
+
+
+startButton.innerHTML="Bituu jalqabi";
+
+
+sellerButton.innerHTML="Gurguraa ta'i";
+
+
+}
+
+
+
+
+else{
+
+
+tag.innerHTML=
+"🤖 AI Powered Ethiopian Marketplace";
+
+
+title.innerHTML=
+"Find Anything in Mercato <span>with AI</span>";
+
+
+description.innerHTML=
+"Mercato AI helps buyers discover products instantly and helps merchants manage their business using Artificial Intelligence.";
+
+
+
+startButton.innerHTML=
+'Start Shopping <i class="fa-solid fa-arrow-right"></i>';
+
+
+
+sellerButton.innerHTML="Become Seller";
+
+}
+
+
+
+}
