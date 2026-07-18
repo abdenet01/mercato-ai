@@ -1,310 +1,620 @@
-Birr",customer:"Abden
+// =====================================
+// MERCATO AI JAVASCRIPT
+// =====================================
 
 
-et",status:"Pending"};localStorage.s
 
+// =====================================
+// LANDING PAGE
+// =====================================
 
-e
 
+// Navbar scroll effect
 
+const navbar = document.querySelector(".navbar");
 
 
+window.addEventListener("scroll",()=>{
 
-tItem("newOrder",JSON.
+    if(navbar && window.scrollY > 50){
 
+        navbar.style.background="rgba(255,255,255,0.95)";
+        navbar.style.boxShadow="0 10px 30px rgba(0,0,0,0.12)";
 
+    }
 
-stringify(o
+    else if(navbar){
 
+        navbar.style.background="rgba(255,255,255,0.8)";
+        navbar.style.boxShadow="none";
 
-rder));alert("Order sent to se
+    }
 
+});
 
-ller successfully 🚀
 
 
-");}// ============
+// Buttons
 
+const startButton = document.querySelector(".start-btn");
+const primaryButton = document.querySelector(".primary");
+const sellerButton = document.querySelector(".secondary");
 
-================
 
 
-==
+if(startButton){
 
+startButton.onclick=()=>{
 
+alert("Welcome to Mercato AI 🚀");
 
-=======// SELLER ORDE
+}
 
-R SYSTEM// 
+}
 
-=====================
 
-==
 
+if(primaryButton){
 
+primaryButton.onclick=()=>{
 
-==============window.addEventListener("load",(
+goBuyer();
 
+}
 
-)
+}
 
 
 
+if(sellerButton){
 
+sellerButton.onclick=()=>{
 
+goSeller();
 
-=>{let orderBox=document.getElementById(
-"newOrder");if(orderBo
-x){let order=JSON.parse(localStorage.get
+}
 
+}
 
 
-Item("newOrder"));if(order){orderBox
 
 
-.innerHTML=`🔥 New Order ReceivedProduct: ${order
+// AI typing effect
 
+const aiText = document.querySelector(".ai");
 
 
-.product}Cust
+const message =
+"I found 5 nearby sellers. Best price: 38,500 Birr";
 
 
-omer: ${order.custome
+let index=0;
 
-r}Price: ${order.price}${order.s
 
-ta
+function typingEffect(){
 
+if(aiText && index < message.length){
 
+aiText.innerHTML += message.charAt(index);
 
-tus}Accept
+index++;
 
+setTimeout(typingEffect,50);
 
- OrderReject`;}}});/
+}
 
-/ =====================
+}
 
 
-====
-============// SELLER
- AI A
 
+window.addEventListener("load",()=>{
 
-SSI
-STANT// =================
-====
+if(aiText){
 
+aiText.innerHTML="";
 
-===
-=============function resto
-ckAI
+typingEffect();
 
+}
 
-(){
-alert("🤖 AI Business
- Ana
+});
 
 
-lysis\
-n\n" +"Sugar st
-ock is 
 
-low.\n" 
 
-+"Demand increased by 30%.\n\n" 
-+"Recommende
-d restock
 
+// =====================================
+// PAGE NAVIGATION
+// =====================================
 
-: +100 units");}function acceptO
-rder()
-{alert("✅
 
 
- Order
+function goBuyer(){
 
- a
+window.location.href="buyer.html";
 
+}
 
-c
 
 
-c
+function goSeller(){
 
+window.location.href="seller.html";
 
+}
 
-ept
-ed. Customer notified.");}function rejec
-tOrder(){alert("❌ Orde
-r rejected.");}// ======================
 
 
-==========// LANGUAGE
+function goLogin(){
 
+window.location.href="login.html";
 
- SYSTE
+}
 
-M// ===========================
 
-=====const languageSelect
 
- = document.getElementById("lang
+function goRegister(){
 
-uage-select");if(languageSelect){
+window.location.href="register.html";
 
-la
+}
 
 
-n
-guageSelect.addEventLis
 
 
-tener(
-"change", function(){let language = th
-is
 
+// =====================================
+// REGISTER SYSTEM
+// =====================================
 
-.
 
 
+let selectedRole="Buyer";
 
-value;if(language === "
 
 
-am"){c
-hangeLanguage("am")
-;}
+function selectRole(element){
 
 
-e
-lse if(language === "om"){changeLan
-guage("om");}else{
-changeLanguage("en");}});}function 
+let roles=document.querySelectorAll(".role");
 
 
-changeLanguage(lang){const title = document.querySelector(".hero h
+roles.forEach(role=>{
 
+role.classList.remove("active");
 
-1");const descripti
+});
 
 
-on = document.querySelector(".description");const tag
+element.classList.add("active");
 
 
- = document.querySelector(
 
+selectedRole = element.querySelector("h3").innerText;
 
 
-".tag");const startBut
 
-ton = document.queryS
+localStorage.setItem(
+"userRole",
+selectedRole
+);
 
-e
 
+}
 
-lector(".primary");const se
 
-llerButton = document
 
-.
 
+function registerUser(){
 
-query
 
-Selector(".secondary"
+localStorage.setItem(
+"userRole",
+selectedRole
+);
 
-)
 
+alert("Account created successfully 🚀");
 
 
-;if
+window.location.href="login.html";
 
 
-(
+}
 
 
 
-lang==="am"){tag.innerHTML="🤖
 
 
+// =====================================
+// LOGIN SYSTEM
+// =====================================
 
- በ AI የሚሰራ የኢትዮጵያ ገበያ";title.innerHTML="በመርካቶ ማንኛ
 
-ውንም ነገር በ AI ያግኙ";description.innerHTML="Mercato AI ገዢዎችን ም
 
-ርቶችን በፍጥነት እንዲያገኙ እና ነጋዴዎችን በ AI ንግዳቸውን እንዲ
+function loginUser(){
 
-ያስተዳድሩ ይረዳል";startButton.innerHTML="መግዛት ጀምር";sellerBut
 
-ton.innerHTML="ሻጭ ሁን";}else if(lang==="om"){tag.innerHTML=
+let role = localStorage.getItem("userRole");
 
 
+alert("Login successful 🚀");
 
 
 
-"🤖 Gabaa Itooph
+if(role==="Seller"){
 
 
-iyaa AI'n hojjetamu";title.innerHTML="Wa
+window.location.href="seller.html";
 
 
-an barbaadde Mer
-cato keessatti AI waliin argadhu";descrip
+}
 
+else{
 
 
-tion.innerHTML="Mercat
-o AI bittoota oomisha argachuuf fi daldaltoota hojii isaanii AI fayyadamuun
+window.location.href="buyer.html";
 
 
- bulchuuf gargaara";startButton.i
+}
 
 
-nnerHTML="Bituu jalqabi";seller
+}
 
 
-B
 
 
 
+// =====================================
+// AI CHAT
+// =====================================
 
-utton.innerHTML="Gurg
 
 
+function openChat(){
 
-uraa ta'i";}else{tag.innerHTML="🤖 AI Powered Ethio
 
+let chat=document.getElementById("chatBox");
 
-pian Marketplace
-";title.innerHTML="Find Anything in Mercato with AI";description.i
 
+if(chat){
 
+chat.style.display="block";
 
-nnerHTML="Mercato AI h
-elps buyers discover products instantly and helps merchants manage their business using Artificial Int
+}
 
+}
 
-elligence.";startButton.innerHTML='Sta
 
 
-rt Shopping ';sellerButton.innerHTML="B
+function closeChat(){
 
 
-e
+let chat=document.getElementById("chatBox");
 
 
+if(chat){
 
+chat.style.display="none";
 
-come 
+}
 
+}
 
-Seller";}}asyn
-c function loadProducts(){    const re
 
 
-sponse = await f
-etch(        "http://localhost:5000/products"   
 
 
- );    const products 
-= await response.json();    console.log(products);}loadProducts();
+// =====================================
+// BUYER AI SEARCH
+// =====================================
+
+
+
+function searchAI(){
+
+
+
+let input=document.getElementById("aiInput");
+
+
+let result=document.getElementById("aiResult");
+
+
+
+if(!input || !result){
+
+return;
+
+}
+
+
+
+if(input.value===""){
+
+
+alert("Please enter what you need");
+
+
+return;
+
+
+}
+
+
+
+result.style.display="block";
+
+
+result.innerHTML=`
+
+<h3>
+🤖 AI is analyzing market data...
+</h3>
+
+<p>
+Searching sellers near you...
+</p>
+
+`;
+
+
+
+setTimeout(()=>{
+
+
+result.innerHTML=`
+
+<h3>
+🤖 AI Recommendation
+</h3>
+
+
+<div class="ai-product">
+
+<strong>
+Samsung Galaxy S21+
+</strong>
+
+<br>
+
+Abebe Electronics 📍 Mercato
+
+<br>
+
+38,500 Birr
+
+</div>
+
+
+<div class="ai-product">
+
+<strong>
+Samsung Galaxy S22
+</strong>
+
+<br>
+
+Tech Market 📍 Addis Ababa
+
+<br>
+
+42,000 Birr
+
+</div>
+
+
+`;
+
+
+},2000);
+
+
+
+}
+
+
+
+
+
+// =====================================
+// PRODUCT SYSTEM
+// =====================================
+
+
+
+function openProduct(){
+
+
+window.location.href="product.html";
+
+
+}
+
+
+
+
+
+function buyProduct(){
+
+
+
+let order={
+
+
+product:"Samsung Galaxy S21+",
+
+
+price:"38,500 Birr",
+
+
+customer:"Abdenet",
+
+
+status:"Pending"
+
+
+};
+
+
+
+localStorage.setItem(
+
+"newOrder",
+
+JSON.stringify(order)
+
+);
+
+
+
+alert("Order sent to seller successfully 🚀");
+
+
+}
+
+
+
+
+
+
+// =====================================
+// SELLER ORDER SYSTEM
+// =====================================
+
+
+
+window.addEventListener("load",()=>{
+
+
+let orderBox=document.getElementById("newOrder");
+
+
+
+if(orderBox){
+
+
+let order=JSON.parse(
+
+localStorage.getItem("newOrder")
+
+);
+
+
+
+if(order){
+
+
+orderBox.innerHTML=`
+
+<div class="new-order">
+
+
+<h3>
+🔥 New Order Received
+</h3>
+
+
+<p>
+Product: ${order.product}
+</p>
+
+
+<p>
+Customer: ${order.customer}
+</p>
+
+
+<p>
+Price: ${order.price}
+</p>
+
+
+<span>
+${order.status}
+</span>
+
+<br><br>
+
+<button onclick="acceptOrder()">
+Accept Order
+</button>
+
+
+<button onclick="rejectOrder()">
+Reject
+</button>
+
+
+</div>
+
+`;
+
+
+}
+
+
+}
+
+
+
+});
+// =====================================
+// SELLER AI ASSISTANT
+// =====================================
+
+
+function restockAI(){
+
+
+alert(
+
+"🤖 AI Business Analysis\n\n" +
+
+"Sugar stock is low.\n" +
+
+"Demand increased by 30%.\n\n" +
+
+"Recommended restock: +100 units"
+
+);
+
+
+}
+function acceptOrder(){
+
+
+alert(
+"✅ Order accepted. Customer notified."
+);
+
+
+}
+
+
+
+function rejectOrder(){
+
+
+alert(
+"❌ Order rejected."
+);
+
+
+}
+async function loadProducts(){
+
+    const response = await fetch(
+        "http://localhost:5000/products"
+    );
+
+
+    const products = await response.json();
+
+
+    console.log(products);
+
+}
+
+
+loadProducts();
