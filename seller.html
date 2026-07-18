@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mercato AI | Seller Dashboard</title>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="css/seller.css">
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</head>
+
+
+
+<body>
+
+
+<div class="seller-container">
+
+
+
+<!-- SIDEBAR -->
+
+
+<aside class="seller-sidebar">
+
+
+<div class="brand">
+
+<i class="fa-solid fa-store"></i>
+
+<span>
+Mercato AI
+</span>
+
+</div>
+
+<ul>
+
+
+<li class="active">
+
+<i class="fa-solid fa-chart-line"></i>
+
+Dashboard
+
+</li>
+
+
+
+<li>
+
+<i class="fa-solid fa-box"></i>
+
+Inventory
+
+</li>
+
+
+
+<li>
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+Orders
+
+</li>
+
+
+
+<li>
+
+<i class="fa-solid fa-users"></i>
+
+Customers
+
+</li>
+
+
+
+
+<li>
+
+<i class="fa-solid fa-chart-simple"></i>
+
+Analytics
+
+</li>
+
+
+
+
+<li>
+
+<i class="fa-solid fa-robot"></i>
+
+AI Assistant
+
+</li>
+
+
+
+
+<li>
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</li>
+
+
+
+</ul>
+
+
+
+</aside>
+
+
+
+
+
+
+
+<!-- MAIN -->
+
+
+<main class="seller-main">
+
+<a href="index.html" class="back-home">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Home
+
+</a>
+
+<div class="seller-header">
+
+
+<div>
+
+<h1>
+Good Morning, Ahmed 👋
+</h1>
+
+
+<p>
+Here is your business performance today.
+</p>
+
+
+</div>
+
+
+
+
+<div class="seller-profile">
+
+
+<i class="fa-solid fa-bell"></i>
+
+
+<img src="https://i.pravatar.cc/60" width="60" height="60" alt="Profile Picture">
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<!-- STAT CARDS -->
+
+
+<div class="stats">
+
+
+
+<div class="stat-card">
+
+
+<i class="fa-solid fa-money-bill-trend-up"></i>
+
+
+<div>
+
+<h3>
+18,500 Birr
+</h3>
+
+
+<p>
+Today's Revenue
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="stat-card">
+
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+
+<div>
+
+<h3>
+42
+</h3>
+
+
+<p>
+New Orders
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="stat-card">
+
+
+<i class="fa-solid fa-box-open"></i>
+
+
+<div>
+
+<h3>
+186
+</h3>
+
+
+<p>
+Products
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="stat-card">
+
+
+<i class="fa-solid fa-users"></i>
+
+
+<div>
+
+<h3>
+530
+</h3>
+
+
+<p>
+Customers
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- BUSINESS AREA -->
+
+
+<div class="dashboard-grid">
+
+
+
+<div class="chart-box">
+
+
+<h2>
+Sales Analytics
+</h2>
+
+
+
+<div class="chart">
+
+
+<div style="height:60%" ></div>
+
+<div style="height:85%"></div>
+
+<div style="height:40%"></div>
+
+<div style="height:95%"></div>
+
+<div style="height:70%"></div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="ai-box">
+
+
+<h2>
+
+🤖 AI Business Assistant
+
+</h2>
+
+
+
+<p>
+
+Your sugar stock is low.
+
+Demand increased by 30%.
+
+</p>
+
+
+
+<button onclick="restockAI()">
+
+Restock Recommendation
+
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- INVENTORY -->
+
+
+<h2 class="section-title">
+
+Inventory Status
+
+</h2>
+
+
+
+<div class="inventory">
+
+
+
+<div>
+
+<h3>
+Sugar
+</h3>
+
+<p class="low">
+8 left
+</p>
+
+
+</div>
+
+
+
+
+
+<div>
+
+<h3>
+Rice
+</h3>
+
+<p>
+100 left
+</p>
+
+
+</div>
+
+
+
+
+
+<div>
+
+<h3>
+Coffee
+</h3>
+
+<p>
+60 left
+</p>
+
+
+</div>
+
+
+
+</div>
+
+<!-- ORDERS -->
+
+
+<h2 class="section-title">
+
+Recent Orders
+
+</h2>
+
+<div id="newOrder"></div>
+
+
+<table>
+
+
+<tr>
+
+<th>
+Customer
+</th>
+
+<th>
+Product
+</th>
+
+<th>
+Status
+</th>
+
+
+</tr>
+
+
+
+
+<tr>
+
+<td>
+Abebe
+</td>
+
+<td>
+Samsung S21
+</td>
+
+<td class="complete">
+Completed
+</td>
+
+</tr>
+
+
+
+
+<tr>
+
+<td>
+Sara
+</td>
+
+<td>
+Coffee
+</td>
+
+<td class="pending">
+Pending
+</td>
+
+</tr>
+
+
+
+
+</table>
+
+
+
+
+
+</main>
+
+
+</div>
+
+
+<script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mercato AI | Buyer</title>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="css/buyer.css">
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</head>
+
+
+<body>
+
+
+<div class="buyer-container">
+
+
+<!-- SIDEBAR -->
+
+
+<aside class="sidebar">
+
+
+<div class="brand">
+
+<i class="fa-solid fa-store"></i>
+
+<span>
+Mercato AI
+</span>
+
+</div>
+<ul>
+
+<li class="active">
+<i class="fa-solid fa-house"></i>
+Home
+</li>
+
+
+<li>
+<i class="fa-solid fa-compass"></i>
+Explore
+</li>
+
+
+<li>
+<i class="fa-solid fa-robot"></i>
+AI Assistant
+</li>
+
+
+<li>
+<i class="fa-solid fa-cart-shopping"></i>
+Orders
+</li>
+
+
+<li>
+<i class="fa-solid fa-heart"></i>
+Wishlist
+</li>
+
+
+<li>
+<i class="fa-solid fa-user"></i>
+Profile
+</li>
+
+
+</ul>
+
+
+
+</aside>
+
+
+
+
+
+<!-- MAIN CONTENT -->
+
+
+<main class="main">
+
+<a href="index.html" class="back-home">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Home
+
+</a>
+<!-- TOP BAR -->
+
+
+<div class="topbar">
+
+
+<div>
+
+<h1>
+Good Morning, Abdenet 👋
+</h1>
+
+<p>
+What are you looking for today?
+</p>
+
+</div>
+
+
+
+<div class="profile">
+
+<i class="fa-solid fa-bell"></i>
+
+<img src="images/profile.jpg" width="50" height="50" alt="Profile Picture">
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- AI SEARCH -->
+
+<div class="ai-search">
+
+
+<i class="fa-solid fa-robot"></i>
+
+
+<input 
+id="aiInput"
+type="text"
+placeholder="Ask AI: Find products, prices, shops...">
+
+
+<button onclick="searchAI()">
+
+Search
+
+</button>
+
+
+</div>
+
+<!-- AI RESULT -->
+
+<div class="ai-result" id="aiResult">
+
+
+</div>
+
+
+
+
+
+<!-- CATEGORY -->
+
+
+<h2 class="title">
+Popular Categories
+</h2>
+
+
+
+<div class="categories">
+
+
+<div>
+📱
+<br>
+Electronics
+</div>
+
+
+<div>
+👕
+<br>
+Fashion
+</div>
+
+
+<div>
+🏠
+<br>
+Home
+</div>
+
+
+<div>
+🍔
+<br>
+Food
+</div>
+
+
+<div>
+🚗
+<br>
+Cars
+</div>
+
+
+</div>
+
+
+
+
+
+
+<!-- PRODUCTS -->
+
+
+<h2 class="title">
+Trending Products
+</h2>
+
+
+
+<div class="products">
+
+
+
+<div class="product" onclick="openProduct()">
+
+
+
+<img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97" width="200" height="200" alt="Samsung Galaxy S21+">
+
+
+
+<h3>
+Samsung S21+
+</h3>
+
+
+<p>
+38,500 Birr
+</p>
+
+
+<span>
+⭐ 4.8
+</span>
+
+
+
+</div>
+
+
+
+
+
+<div class="product" onclick="openProduct()">
+
+
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" width="200" height="200" alt="Adidas Shoes">
+
+
+<h3>
+Adidas Shoes
+</h3>
+
+
+<p>
+2,950 Birr
+</p>
+
+
+<span>
+⭐ 4.6
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="product" onclick="openProduct()">
+
+
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e" width="200" height="200" alt="JBL Headphone">
+
+
+<h3>
+JBL Headphone
+</h3>
+
+
+<p>
+3,600 Birr
+</p>
+
+
+<span>
+⭐ 4.7
+</span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<!-- AI ASSISTANT -->
+
+
+<div class="assistant">
+
+
+<h2>
+
+🤖 AI Assistant
+
+</h2>
+
+
+<p>
+
+"Find me a phone near mercato under 40,000 Birr"
+
+</p>
+
+
+
+<div class="answer">
+
+I found 3 sellers near you.
+
+</div>
+
+
+
+</div>
+
+
+
+
+</main>
+
+
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+
+</html>

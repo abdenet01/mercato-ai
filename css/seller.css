@@ -1,0 +1,696 @@
+/* ==================================
+   MERCATO AI SELLER DASHBOARD
+================================== */
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+
+body{
+
+    background:#f8fafc;
+    color:#1e293b;
+
+}
+
+
+
+.seller-container{
+
+    display:flex;
+    min-height:100vh;
+
+}
+
+
+
+
+/* ==========================
+ SIDEBAR
+========================== */
+
+
+.seller-sidebar{
+
+    width:260px;
+
+    background:#ffffff;
+
+    padding:30px 20px;
+
+    box-shadow:5px 0 20px rgba(0,0,0,.06);
+
+}
+
+
+
+.seller-sidebar h2{
+
+    color:#2563eb;
+
+    margin-bottom:40px;
+
+}
+
+
+
+.seller-sidebar h2 i{
+
+    margin-right:10px;
+
+}
+
+
+
+
+.seller-sidebar ul{
+
+    list-style:none;
+
+}
+
+
+
+
+.seller-sidebar li{
+
+    padding:15px;
+
+    margin-bottom:10px;
+
+    border-radius:12px;
+
+    color:#64748b;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.seller-sidebar li i{
+
+    width:25px;
+
+}
+
+
+
+.seller-sidebar li:hover,
+.seller-sidebar .active{
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+}
+
+
+
+
+
+
+/* ==========================
+ MAIN
+========================== */
+
+
+.seller-main{
+
+    flex:1;
+
+    padding:35px;
+
+}
+
+
+
+
+
+
+/* HEADER */
+
+.seller-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+
+.seller-header h1{
+
+    font-size:32px;
+
+}
+
+
+
+.seller-header p{
+
+    color:#64748b;
+
+}
+
+
+
+
+
+.seller-profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+
+
+.seller-profile i{
+
+    color:#2563eb;
+
+    font-size:22px;
+
+}
+
+
+
+.seller-profile img{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+ STAT CARDS
+========================== */
+
+
+.stats{
+
+    margin-top:40px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+
+
+
+
+.stat-card{
+
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.stat-card i{
+
+
+    font-size:35px;
+
+    color:#2563eb;
+
+}
+
+
+
+.stat-card h3{
+
+    font-size:22px;
+
+}
+
+
+
+.stat-card p{
+
+    color:#64748b;
+
+    font-size:14px;
+
+}
+
+
+
+
+
+
+/* ==========================
+ ANALYTICS AREA
+========================== */
+
+
+.dashboard-grid{
+
+    margin-top:40px;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:25px;
+
+}
+
+
+
+
+.chart-box,
+.ai-box{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+
+}
+
+
+
+
+.chart{
+
+
+    height:250px;
+
+    display:flex;
+
+    align-items:end;
+
+    gap:25px;
+
+    margin-top:30px;
+
+
+}
+
+
+
+.chart div{
+
+    width:40px;
+
+    background:#2563eb;
+
+    border-radius:10px 10px 0 0;
+
+}
+
+
+
+
+
+.ai-box{
+
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+
+
+.ai-box p{
+
+    background:white;
+
+    color:#1e293b;
+
+    padding:20px;
+
+    margin-top:25px;
+
+    border-radius:15px;
+
+}
+
+
+
+.ai-box button{
+
+
+    margin-top:20px;
+
+    padding:14px 25px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:white;
+
+    color:#2563eb;
+
+    font-weight:600;
+
+}
+
+
+
+
+
+
+/* ==========================
+ INVENTORY
+========================== */
+
+
+.section-title{
+
+    margin-top:40px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+
+.inventory{
+
+
+    display:flex;
+
+    gap:25px;
+
+}
+
+
+
+.inventory div{
+
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    width:200px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+
+
+}
+
+
+
+.inventory p{
+
+    margin-top:10px;
+
+    color:#22c55e;
+
+}
+
+
+
+.inventory .low{
+
+    color:#ef4444;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+ TABLE
+========================== */
+
+
+table{
+
+
+    width:100%;
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    border-collapse:collapse;
+
+
+}
+
+
+
+
+th,
+td{
+
+
+    padding:18px;
+
+    text-align:left;
+
+}
+
+
+
+th{
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+}
+
+
+
+tr{
+
+    border-bottom:1px solid #eee;
+
+}
+
+
+
+.complete{
+
+    color:#22c55e;
+
+    font-weight:600;
+
+}
+
+
+
+.pending{
+
+    color:#f59e0b;
+
+    font-weight:600;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+ RESPONSIVE
+========================== */
+
+
+@media(max-width:1100px){
+
+
+.stats{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+
+.dashboard-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+}
+
+
+
+@media(max-width:800px){
+
+
+.seller-sidebar{
+
+    display:none;
+
+}
+
+
+
+.stats{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.inventory{
+
+    flex-direction:column;
+
+}
+
+
+}
+.brand{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    font-size:25px;
+    font-weight:700;
+
+    color:#2563eb;
+
+    margin-bottom:40px;
+
+}
+
+
+.brand i{
+
+    font-size:30px;
+
+}
+.back-home{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+text-decoration:none;
+
+color:#2563eb;
+
+font-weight:600;
+
+margin-bottom:20px;
+
+}
+.new-order{
+
+
+background:#eff6ff;
+
+border-left:5px solid #2563eb;
+
+padding:20px;
+
+border-radius:15px;
+
+margin-bottom:20px;
+
+
+}
+
+
+
+.new-order h3{
+
+color:#2563eb;
+
+margin-bottom:10px;
+
+}
+
+
+
+.new-order span{
+
+display:inline-block;
+
+margin-top:10px;
+
+background:#fef3c7;
+
+padding:8px 15px;
+
+border-radius:20px;
+
+color:#92400e;
+
+font-weight:600;
+
+}

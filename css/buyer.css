@@ -1,0 +1,639 @@
+/* ==========================
+   MERCATO AI BUYER DASHBOARD
+========================== */
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+
+body{
+
+    background:#f8fafc;
+    color:#1e293b;
+
+}
+
+
+
+.buyer-container{
+
+    display:flex;
+    min-height:100vh;
+
+}
+
+
+
+/* ==========================
+ SIDEBAR
+========================== */
+
+
+.sidebar{
+
+    width:260px;
+
+    background:white;
+
+    padding:30px 20px;
+
+    box-shadow:5px 0 20px rgba(0,0,0,.05);
+
+}
+
+
+
+.sidebar h2{
+
+    color:#2563eb;
+
+    margin-bottom:40px;
+
+}
+
+
+
+.sidebar h2 i{
+
+    margin-right:10px;
+
+}
+
+
+
+.sidebar ul{
+
+    list-style:none;
+
+}
+
+
+
+.sidebar li{
+
+    padding:15px;
+
+    margin-bottom:10px;
+
+    border-radius:12px;
+
+    color:#64748b;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.sidebar li i{
+
+    width:25px;
+
+}
+
+
+
+.sidebar li:hover,
+.sidebar .active{
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+}
+
+
+
+
+
+/* ==========================
+ MAIN
+========================== */
+
+
+.main{
+
+    flex:1;
+
+    padding:35px;
+
+}
+
+
+
+/* TOP BAR */
+
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+
+.topbar h1{
+
+    font-size:32px;
+
+}
+
+
+
+.topbar p{
+
+    color:#64748b;
+
+}
+
+
+
+.profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+
+
+.profile i{
+
+    font-size:22px;
+
+    color:#2563eb;
+
+}
+
+
+
+.profile img{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+}
+
+
+
+
+
+/* ==========================
+ AI SEARCH
+========================== */
+
+
+.ai-search{
+
+
+    background:white;
+
+    margin-top:35px;
+
+    padding:15px;
+
+    border-radius:20px;
+
+    display:flex;
+
+    gap:15px;
+
+    align-items:center;
+
+
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+
+
+}
+
+
+
+.ai-search i{
+
+    color:#2563eb;
+
+    font-size:25px;
+
+}
+
+
+
+.ai-search input{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    font-size:16px;
+
+}
+
+
+
+.ai-search button{
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 30px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+/* ==========================
+ CATEGORY
+========================== */
+
+
+.title{
+
+    margin-top:40px;
+
+    margin-bottom:20px;
+
+    font-size:24px;
+
+}
+
+
+
+.categories{
+
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+
+
+.categories div{
+
+
+    background:white;
+
+    padding:25px;
+
+    width:140px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    font-weight:600;
+
+
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.categories div:hover{
+
+
+    transform:translateY(-8px);
+
+    background:#2563eb;
+
+    color:white;
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+ PRODUCTS
+========================== */
+
+
+.products{
+
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+
+}
+
+
+
+.product{
+
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+
+}
+
+
+
+.product:hover{
+
+
+    transform:translateY(-8px);
+
+
+}
+
+
+
+.product img{
+
+
+    width:100%;
+
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+
+}
+
+
+
+.product h3{
+
+    margin-top:15px;
+
+}
+
+
+
+.product p{
+
+    color:#2563eb;
+
+    font-weight:700;
+
+    margin:8px 0;
+
+}
+
+
+
+.product span{
+
+    color:#f59e0b;
+
+}
+
+
+
+
+
+/* ==========================
+ AI ASSISTANT
+========================== */
+
+
+.assistant{
+
+
+    margin-top:40px;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+
+}
+
+
+
+.assistant p{
+
+
+    background:white;
+
+    color:#1e293b;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+
+
+}
+
+
+
+.answer{
+
+    margin-top:15px;
+
+    background:#1e40af;
+
+    padding:15px;
+
+    border-radius:15px;
+
+
+}
+
+
+
+
+
+/* ==========================
+ RESPONSIVE
+========================== */
+
+
+@media(max-width:900px){
+
+
+.sidebar{
+
+    display:none;
+
+}
+
+
+.products{
+
+    grid-template-columns:1fr;
+
+}
+
+
+.categories{
+
+    flex-wrap:wrap;
+
+}
+
+
+.topbar{
+
+    flex-direction:column;
+
+    align-items:start;
+
+    gap:20px;
+
+}
+
+
+}
+/* BRAND LOGO */
+
+.brand{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    font-size:25px;
+    font-weight:700;
+
+    color:#2563eb;
+
+    margin-bottom:40px;
+
+}
+
+
+.brand i{
+
+    font-size:30px;
+
+}
+.back-home{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+text-decoration:none;
+
+color:#2563eb;
+
+font-weight:600;
+
+margin-bottom:20px;
+
+}
+/* ==========================
+ AI SEARCH RESULT
+========================== */
+
+
+.ai-result{
+
+
+margin-top:20px;
+
+background:white;
+
+border-radius:20px;
+
+padding:25px;
+
+display:none;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+
+}
+
+
+
+.ai-result h3{
+
+color:#2563eb;
+
+margin-bottom:15px;
+
+}
+
+
+
+.ai-product{
+
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:#f8fafc;
+
+padding:15px;
+
+border-radius:15px;
+
+margin-top:10px;
+
+
+}
+
+
+
+.ai-product span{
+
+color:#22c55e;
+
+font-weight:600;
+
+}
