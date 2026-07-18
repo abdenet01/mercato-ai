@@ -2,12 +2,9 @@
 // MERCATO AI JAVASCRIPT
 // =====================================
 
-
-
 // =====================================
 // LANDING PAGE
 // =====================================
-
 
 // Navbar scroll effect
 
@@ -748,3 +745,17 @@ sellerButton.innerHTML="Become Seller";
 
 
 }
+async function loadProducts(){
+
+    const response = await fetch(
+        "http://localhost:5000/products"
+    );
+
+    const products = await response.json();
+
+    console.log(products);
+
+}
+
+
+loadProducts();
