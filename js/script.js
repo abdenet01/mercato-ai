@@ -3,7 +3,6 @@
 // =====================================
 
 
-
 // =====================================
 // LANDING PAGE
 // =====================================
@@ -13,20 +12,17 @@
 
 const navbar = document.querySelector(".navbar");
 
+window.addEventListener("scroll", () => {
 
-window.addEventListener("scroll",()=>{
+    if (navbar && window.scrollY > 50) {
 
-    if(navbar && window.scrollY > 50){
+        navbar.style.background = "rgba(255,255,255,0.95)";
+        navbar.style.boxShadow = "0 10px 30px rgba(0,0,0,0.12)";
 
-        navbar.style.background="rgba(255,255,255,0.95)";
-        navbar.style.boxShadow="0 10px 30px rgba(0,0,0,0.12)";
+    } else if (navbar) {
 
-    }
-
-    else if(navbar){
-
-        navbar.style.background="rgba(255,255,255,0.8)";
-        navbar.style.boxShadow="none";
+        navbar.style.background = "rgba(255,255,255,0.8)";
+        navbar.style.boxShadow = "none";
 
     }
 
@@ -42,37 +38,31 @@ const sellerButton = document.querySelector(".secondary");
 
 
 
-if(startButton){
+if (startButton) {
 
-startButton.onclick=()=>{
-
-alert("Welcome to Mercato AI 🚀");
-
-}
+    startButton.onclick = () => {
+        alert("Welcome to Mercato AI 🚀");
+    };
 
 }
 
 
 
-if(primaryButton){
+if (primaryButton) {
 
-primaryButton.onclick=()=>{
-
-goBuyer();
-
-}
+    primaryButton.onclick = () => {
+        goBuyer();
+    };
 
 }
 
 
 
-if(sellerButton){
+if (sellerButton) {
 
-sellerButton.onclick=()=>{
-
-goSeller();
-
-}
+    sellerButton.onclick = () => {
+        goSeller();
+    };
 
 }
 
@@ -85,37 +75,36 @@ const aiText = document.querySelector(".ai");
 
 
 const message =
-"I found 5 nearby sellers. Best price: 38,500 Birr";
+    "I found 5 nearby sellers. Best price: 38,500 Birr";
 
 
-let index=0;
+let index = 0;
 
 
-function typingEffect(){
+function typingEffect() {
 
-if(aiText && index < message.length){
+    if (aiText && index < message.length) {
 
-aiText.innerHTML += message.charAt(index);
+        aiText.innerHTML += message.charAt(index);
 
-index++;
+        index++;
 
-setTimeout(typingEffect,50);
+        setTimeout(typingEffect, 50);
 
-}
-
-}
-
-
-
-window.addEventListener("load",()=>{
-
-if(aiText){
-
-aiText.innerHTML="";
-
-typingEffect();
+    }
 
 }
+
+
+
+window.addEventListener("load", () => {
+
+    if (aiText) {
+
+        aiText.innerHTML = "";
+        typingEffect();
+
+    }
 
 });
 
@@ -128,34 +117,30 @@ typingEffect();
 // =====================================
 
 
+function goBuyer() {
 
-function goBuyer(){
-
-window.location.href="buyer.html";
-
-}
-
-
-
-function goSeller(){
-
-window.location.href="seller.html";
+    window.location.href = "buyer.html";
 
 }
 
 
+function goSeller() {
 
-function goLogin(){
-
-window.location.href="login.html";
+    window.location.href = "seller.html";
 
 }
 
 
+function goLogin() {
 
-function goRegister(){
+    window.location.href = "login.html";
 
-window.location.href="register.html";
+}
+
+
+function goRegister() {
+
+    window.location.href = "register.html";
 
 }
 
@@ -168,36 +153,34 @@ window.location.href="register.html";
 // =====================================
 
 
-
-let selectedRole="Buyer";
-
-
-
-function selectRole(element){
-
-
-let roles=document.querySelectorAll(".role");
-
-
-roles.forEach(role=>{
-
-role.classList.remove("active");
-
-});
-
-
-element.classList.add("active");
+let selectedRole = "Buyer";
 
 
 
-selectedRole = element.querySelector("h3").innerText;
+function selectRole(element) {
 
 
+    let roles = document.querySelectorAll(".role");
 
-localStorage.setItem(
-"userRole",
-selectedRole
-);
+
+    roles.forEach(role => {
+
+        role.classList.remove("active");
+
+    });
+
+
+    element.classList.add("active");
+
+
+    selectedRole =
+        element.querySelector("h3").innerText;
+
+
+    localStorage.setItem(
+        "userRole",
+        selectedRole
+    );
 
 
 }
@@ -205,19 +188,19 @@ selectedRole
 
 
 
-function registerUser(){
+function registerUser() {
 
 
-localStorage.setItem(
-"userRole",
-selectedRole
-);
+    localStorage.setItem(
+        "userRole",
+        selectedRole
+    );
 
 
-alert("Account created successfully 🚀");
+    alert("Account created successfully 🚀");
 
 
-window.location.href="login.html";
+    window.location.href = "login.html";
 
 
 }
@@ -231,32 +214,29 @@ window.location.href="login.html";
 // =====================================
 
 
-
-function loginUser(){
-
-
-let role = localStorage.getItem("userRole");
+function loginUser() {
 
 
-alert("Login successful 🚀");
+    let role = localStorage.getItem("userRole");
+
+
+    alert("Login successful 🚀");
 
 
 
-if(role==="Seller"){
+    if (role === "Seller") {
 
 
-window.location.href="seller.html";
+        window.location.href = "seller.html";
 
 
-}
-
-else{
+    } else {
 
 
-window.location.href="buyer.html";
+        window.location.href = "buyer.html";
 
 
-}
+    }
 
 
 }
@@ -270,34 +250,33 @@ window.location.href="buyer.html";
 // =====================================
 
 
-
-function openChat(){
-
-
-let chat=document.getElementById("chatBox");
+function openChat() {
 
 
-if(chat){
-
-chat.style.display="block";
-
-}
-
-}
+    let chat = document.getElementById("chatBox");
 
 
+    if (chat) {
 
-function closeChat(){
+        chat.style.display = "block";
 
-
-let chat=document.getElementById("chatBox");
-
-
-if(chat){
-
-chat.style.display="none";
+    }
 
 }
+
+
+
+function closeChat() {
+
+
+    let chat = document.getElementById("chatBox");
+
+
+    if (chat) {
+
+        chat.style.display = "none";
+
+    }
 
 }
 
@@ -310,105 +289,76 @@ chat.style.display="none";
 // =====================================
 
 
-
-function searchAI(){
-
+function searchAI() {
 
 
-let input=document.getElementById("aiInput");
+    let input = document.getElementById("aiInput");
 
-
-let result=document.getElementById("aiResult");
+    let result = document.getElementById("aiResult");
 
 
 
-if(!input || !result){
+    if (!input || !result) {
 
-return;
+        return;
 
-}
-
-
-
-if(input.value===""){
-
-
-alert("Please enter what you need");
-
-
-return;
-
-
-}
+    }
 
 
 
-result.style.display="block";
+    if (input.value === "") {
 
+        alert("Please enter what you need");
 
-result.innerHTML=`
+        return;
 
-<h3>
-🤖 AI is analyzing market data...
-</h3>
-
-<p>
-Searching sellers near you...
-</p>
-
-`;
+    }
 
 
 
-setTimeout(()=>{
+    result.style.display = "block";
 
 
-result.innerHTML=`
-
-<h3>
-🤖 AI Recommendation
-</h3>
-
-
-<div class="ai-product">
-
-<strong>
-Samsung Galaxy S21+
-</strong>
-
-<br>
-
-Abebe Electronics 📍 Mercato
-
-<br>
-
-38,500 Birr
-
-</div>
+    result.innerHTML =
+    `
+    🤖 AI is analyzing market data...
+    <br>
+    Searching sellers near you...
+    `;
 
 
-<div class="ai-product">
 
-<strong>
-Samsung Galaxy S22
-</strong>
-
-<br>
-
-Tech Market 📍 Addis Ababa
-
-<br>
-
-42,000 Birr
-
-</div>
+    setTimeout(() => {
 
 
-`;
+        result.innerHTML =
+        `
+        🤖 AI Recommendation
+        
+        <br><br>
+
+        📱 Samsung Galaxy S21+
+        <br>
+        Seller: Abebe Electronics
+        <br>
+        Location: Mercato
+        <br>
+        Price: 38,500 Birr
+        
+        <br><br>
+
+        📱 Samsung Galaxy S22
+        <br>
+        Seller: Tech Market
+        <br>
+        Location: Addis Ababa
+        <br>
+        Price: 42,000 Birr
+        
+        `;
 
 
-},2000);
-
+    },2000);
 
 
 }
@@ -422,57 +372,45 @@ Tech Market 📍 Addis Ababa
 // =====================================
 
 
+function openProduct() {
 
-function openProduct(){
-
-
-window.location.href="product.html";
-
+    window.location.href = "product.html";
 
 }
 
 
 
+function buyProduct() {
 
 
-function buyProduct(){
+    let order = {
 
+        product:"Samsung Galaxy S21+",
 
+        price:"38,500 Birr",
 
-let order={
+        customer:"Abdenet",
 
+        status:"Pending"
 
-product:"Samsung Galaxy S21+",
-
-
-price:"38,500 Birr",
-
-
-customer:"Abdenet",
-
-
-status:"Pending"
-
-
-};
+    };
 
 
 
-localStorage.setItem(
+    localStorage.setItem(
 
-"newOrder",
+        "newOrder",
 
-JSON.stringify(order)
+        JSON.stringify(order)
 
-);
+    );
 
 
 
-alert("Order sent to seller successfully 🚀");
+    alert("Order sent to seller successfully 🚀");
 
 
 }
-
 
 
 
@@ -483,82 +421,76 @@ alert("Order sent to seller successfully 🚀");
 // =====================================
 
 
-
 window.addEventListener("load",()=>{
 
 
-let orderBox=document.getElementById("newOrder");
+    let orderBox =
+    document.getElementById("newOrder");
 
 
 
-if(orderBox){
+    if(orderBox){
 
 
-let order=JSON.parse(
-
-localStorage.getItem("newOrder")
-
-);
-
+        let order =
+        JSON.parse(
+            localStorage.getItem("newOrder")
+        );
 
 
-if(order){
+
+        if(order){
 
 
-orderBox.innerHTML=`
+            orderBox.innerHTML =
+            `
+            🔥 New Order Received
+            
+            <br><br>
 
-<div class="new-order">
+            Product:
+            ${order.product}
 
+            <br>
 
-<h3>
-🔥 New Order Received
-</h3>
+            Customer:
+            ${order.customer}
 
+            <br>
 
-<p>
-Product: ${order.product}
-</p>
+            Price:
+            ${order.price}
 
+            <br>
 
-<p>
-Customer: ${order.customer}
-</p>
+            Status:
+            ${order.status}
 
+            <br><br>
 
-<p>
-Price: ${order.price}
-</p>
+            <button onclick="acceptOrder()">
+            Accept Order
+            </button>
 
-
-<span>
-${order.status}
-</span>
-
-<br><br>
-
-<button onclick="acceptOrder()">
-Accept Order
-</button>
-
-
-<button onclick="rejectOrder()">
-Reject
-</button>
+            <button onclick="rejectOrder()">
+            Reject
+            </button>
+            
+            `;
 
 
-</div>
-
-`;
+        }
 
 
-}
-
-
-}
-
+    }
 
 
 });
+
+
+
+
+
 // =====================================
 // SELLER AI ASSISTANT
 // =====================================
@@ -568,26 +500,26 @@ function restockAI(){
 
 
 alert(
+`
+🤖 AI Business Analysis
 
-"🤖 AI Business Analysis\n\n" +
+Sugar stock is low.
 
-"Sugar stock is low.\n" +
+Demand increased by 30%.
 
-"Demand increased by 30%.\n\n" +
-
-"Recommended restock: +100 units"
-
+Recommended restock:
++100 units
+`
 );
 
 
 }
+
+
+
 function acceptOrder(){
 
-
-alert(
-"✅ Order accepted. Customer notified."
-);
-
+    alert("✅ Order accepted. Customer notified.");
 
 }
 
@@ -595,26 +527,205 @@ alert(
 
 function rejectOrder(){
 
+    alert("❌ Order rejected.");
 
-alert(
-"❌ Order rejected."
+}
+
+
+
+
+
+// =====================================
+// LANGUAGE SYSTEM
+// =====================================
+
+
+const languageSelect =
+document.getElementById("language-select");
+
+
+
+if(languageSelect){
+
+
+languageSelect.addEventListener(
+"change",
+function(){
+
+
+let language=this.value;
+
+
+changeLanguage(language);
+
+
+});
+
+
+}
+
+
+
+
+function changeLanguage(lang){
+
+
+
+const title =
+document.querySelector(".hero h1");
+
+
+const description =
+document.querySelector(".description");
+
+
+const tag =
+document.querySelector(".tag");
+
+
+
+const startButton =
+document.querySelector(".primary");
+
+
+const sellerButton =
+document.querySelector(".secondary");
+
+
+
+
+if(lang==="am"){
+
+
+
+tag.innerHTML =
+"🤖 በ AI የሚሰራ የኢትዮጵያ ገበያ";
+
+
+title.innerHTML =
+"በመርካቶ ማንኛውንም ነገር በ AI ያግኙ";
+
+
+description.innerHTML =
+"Mercato AI ገዢዎችን ምርቶችን በፍጥነት እንዲያገኙ እና ነጋዴዎችን AI በመጠቀም ንግዳቸውን እንዲያስተዳድሩ ይረዳል";
+
+
+startButton.innerHTML =
+"መግዛት ጀምር";
+
+
+sellerButton.innerHTML =
+"ሻጭ ሁን";
+
+
+
+}
+
+
+
+else if(lang==="om"){
+
+
+
+tag.innerHTML =
+"🤖 Gabaa Itoophiyaa AI'n hojjetamu";
+
+
+title.innerHTML =
+"Waan barbaadde Mercato keessatti AI waliin argadhu";
+
+
+description.innerHTML =
+"Mercato AI bittoota oomisha argachuuf fi daldaltoota hojii isaanii AI fayyadamuun bulchuuf gargaara";
+
+
+startButton.innerHTML =
+"Bituu jalqabi";
+
+
+sellerButton.innerHTML =
+"Gurguraa ta'i";
+
+
+
+}
+
+
+
+else {
+
+
+
+tag.innerHTML =
+"🤖 AI Powered Ethiopian Marketplace";
+
+
+title.innerHTML =
+"Find Anything in Mercato with AI";
+
+
+description.innerHTML =
+"Mercato AI helps buyers discover products instantly and helps merchants manage their business using Artificial Intelligence.";
+
+
+startButton.innerHTML =
+"Start Shopping";
+
+
+sellerButton.innerHTML =
+"Become Seller";
+
+
+}
+
+
+}
+
+
+
+
+
+// =====================================
+// BACKEND PRODUCT API
+// =====================================
+
+
+async function loadProducts(){
+
+
+try{
+
+
+const response =
+await fetch(
+"http://localhost:5000/products"
 );
 
 
-}
-async function loadProducts(){
 
-    const response = await fetch(
-        "http://localhost:5000/products"
-    );
+const products =
+await response.json();
 
 
-    const products = await response.json();
+
+console.log(products);
 
 
-    console.log(products);
 
 }
+
+catch(error){
+
+console.log(
+"Backend connection error:",
+error
+);
+
+}
+
+
+}
+
 
 
 loadProducts();
