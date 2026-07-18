@@ -3,30 +3,26 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mercato AI | Smart Marketplace</title>
+    <title>Mercato AI | Smart Marketplace</title>
 
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- Google Font -->
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 
-<!-- Font Awesome -->
+    <!-- Font Awesome Icons -->
+    <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-
-<!-- CSS -->
-
-<link rel="stylesheet" href="css/style.css">
-
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -36,86 +32,60 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
 <!-- ================= NAVBAR ================= -->
 
-
 <header>
 
 <nav class="navbar">
 
-
-<div class="logo">
-
-<span>Mercato</span> AI
-
-</div>
+    <div class="logo">
+        <span>Mercato</span> AI
+    </div>
 
 
+    <ul class="nav-links">
 
-<ul class="nav-links">
+        <li><a href="#">Home</a></li>
 
-<li><a href="#">Home</a></li>
+        <li><a href="#">Features</a></li>
 
-<li><a href="#features">Features</a></li>
+        <li><a href="#">For Buyers</a></li>
 
-<li><a href="#">Marketplace</a></li>
+        <li><a href="#">For Sellers</a></li>
 
-<li><a href="#">AI Assistant</a></li>
+        <li><a href="#">About</a></li>
 
-<li><a href="#">About</a></li>
-
-</ul>
-
-
-
-
-<div class="nav-right">
-
+    </ul>
 
 <div class="language-select">
 
-<i class="fa-solid fa-globe"></i>
+🌍
 
+<select id="language-select" aria-label="Language selector" title="Select language">
 
-<select>
+<option value="en">English</option>
 
-<option>English</option>
+<option value="am">Amharic</option>
 
-<option>Amharic</option>
-
-<option>Afan Oromo</option>
-
+<option value="om">Afan Oromo</option>
 
 </select>
 
-
 </div>
+    <div class="nav-buttons">
 
-
-
-<button class="login-btn">
-
-Login
-
+<button class="login-btn" onclick="goLogin()">
+    Login
 </button>
 
 
-
-<button class="start-btn">
-
-Get Started
-
+<button class="start-btn" onclick="goRegister()">
+    Get Started
 </button>
 
-
 </div>
-
-
 
 </nav>
 
-
 </header>
-
-
 
 
 
@@ -128,82 +98,37 @@ Get Started
 <div class="hero-content">
 
 
-
-<!-- LEFT CONTENT -->
-
-
 <div class="hero-text">
 
 
-<div class="tag">
+<p class="tag">
 
 <i class="fa-solid fa-robot"></i>
 
 AI Powered Ethiopian Marketplace
 
-</div>
+</p>
 
 
 
 <h1>
-
-Find Anything in
-
-<span>Mercato</span>
-
-with AI
-
+<span>
+Find Anything in Mercato with AI
+</span>
 </h1>
 
 
 
 <p class="description">
 
-
 Mercato AI helps buyers discover products instantly
-and helps merchants manage their businesses using
+and helps merchants manage their business using
 Artificial Intelligence.
-
 
 </p>
 
-
-
-
-
-<!-- SEARCH BAR -->
-
-
-<div class="search-box">
-
-
-<input 
-type="text"
-placeholder="Search products, shops, services...">
-
-
-
-<button>
-
-<i class="fa-solid fa-magnifying-glass"></i>
-
-</button>
-
-
-</div>
-
-
-
-
-
-
-<!-- BUTTONS -->
-
-
 <div class="hero-buttons">
-
-
-<button class="primary-btn">
+<button class="primary" onclick="goBuyer()">
 
 BUYER
 
@@ -213,22 +138,15 @@ BUYER
 
 
 
-
-<button class="secondary-btn">
+<button class="secondary" onclick="goSeller()">
 
 SELLER
 
 </button>
 
 
-
 </div>
 
-
-
-
-
-<!-- TRUST -->
 
 
 <div class="trust">
@@ -274,151 +192,83 @@ Fast AI Search
 
 
 
-
-<!-- RIGHT AI DASHBOARD -->
+<!-- AI DASHBOARD MOCKUP -->
 
 
 <div class="hero-image">
 
 
-
 <div class="dashboard">
 
 
-
-<div class="dashboard-header">
-
-
-<div>
-
-<h3>
+<div class="dash-header">
 
 Mercato AI Assistant
 
-</h3>
+<i class="fa-solid fa-circle"></i>
+
+</div>
 
 
-<p>
 
-Smart Marketplace
+<div class="chat">
+
+<p class="user">
+
+Find Samsung S21 under 40,000 Birr
+
+</p>
+
+
+<p class="ai">
+
+I found 5 nearby sellers.
+
+Best price: 38,500 Birr
 
 </p>
 
 
 </div>
 
-
-<i class="fa-solid fa-circle"></i>
-
-
-</div>
-
-
-
-
-
-
-<div class="chat-area">
-
-
-<div class="user-message">
-
-
-Find Samsung S21 under
-40,000 Birr
-
+    <div > 
+    The best marketing state. <br> Easy to meet what you want   
+    <i class="fa-solid fa-rectangle"></i>
 
 </div>
-
-
-
-
-<div class="ai-message">
-
-
-I found 5 nearby sellers.
-
-
-<br><br>
-
-
-Best price:
-
-<strong>
-
-38,500 Birr
-
-</strong>
-
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
 <div class="products">
 
 
 <div class="product-card">
 
-
 <i class="fa-solid fa-mobile-screen"></i>
 
-
 <h4>
-
 Samsung S21+
-
 </h4>
 
-
 <p>
-
 38,500 Birr
-
 </p>
 
-
 </div>
-
-
 
 
 
 
 <div class="product-card">
 
-
 <i class="fa-solid fa-location-dot"></i>
 
-
 <h4>
-
 Nearby Shop
-
 </h4>
 
-
 <p>
-
 350 meters
-
 </p>
 
-
 </div>
-
-
-
-
-</div>
-
 
 
 
@@ -426,41 +276,28 @@ Nearby Shop
 
 
 
+</div>
 
 
 
-<!-- FLOATING CARD -->
+
+<!-- Floating cards -->
 
 
 <div class="floating-card card-one">
 
-
 <i class="fa-solid fa-chart-line"></i>
 
-
 <div>
-
-<h4>
-
-+25%
-
-</h4>
-
-
-<p>
-
-Sales Growth
-
-</p>
-
+<span>
+Sales +25% 
+    <br>
+This Month
+</span>
 
 </div>
 
-
-
 </div>
-
-
 
 
 
@@ -469,22 +306,15 @@ Sales Growth
 
 <i class="fa-solid fa-box"></i>
 
-
 <div>
 
-<h4>
+Inventory
 
-186
+<br>
 
-</h4>
-
-
-<p>
-
-Products
-
-</p>
-
+<span>
+186 Products
+</span>
 
 </div>
 
@@ -492,96 +322,6 @@ Products
 </div>
 
 
-
-
-</div>
-
-
-
-</div>
-
-
-</section>
-<!-- ================= STATISTICS ================= -->
-
-<section class="stats">
-
-
-<div class="stat-card">
-
-<h2>
-
-12K+
-
-</h2>
-
-<p>
-
-Active Merchants
-
-</p>
-
-
-</div>
-
-
-
-
-<div class="stat-card">
-
-<h2>
-
-75K+
-
-</h2>
-
-<p>
-
-Products Listed
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="stat-card">
-
-<h2>
-
-24/7
-
-</h2>
-
-<p>
-
-AI Assistance
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="stat-card">
-
-<h2>
-
-95%
-
-</h2>
-
-<p>
-
-Customer Satisfaction
-
-</p>
 
 
 </div>
@@ -593,20 +333,10 @@ Customer Satisfaction
 
 
 
-<!-- ================= FEATURES ================= -->
+<!-- FEATURES SECTION -->
 
 
-<section class="features" id="features">
-
-
-<div class="section-title">
-
-
-<p>
-
-POWERFUL FEATURES
-
-</p>
+<section class="features">
 
 
 <h2>
@@ -616,101 +346,55 @@ Everything powered by AI
 </h2>
 
 
-<span>
-
-A smarter marketplace connecting Ethiopian buyers
-and sellers.
-
-</span>
-
-
-</div>
-
-
-
-
-
 <div class="feature-container">
 
 
-
 <div class="feature-card">
-
 
 <i class="fa-solid fa-magnifying-glass"></i>
 
-
 <h3>
-
 Smart Search
-
 </h3>
 
-
 <p>
-
-Find products using natural language,
-voice search, and AI recommendations.
-
+Find products using natural language.
 </p>
 
+</div>
+
+
+
+<div class="feature-card">
+
+<i class="fa-solid fa-store"></i>
+
+<h3>
+Seller Assistant
+</h3>
+
+<p>
+Manage inventory and sales easily.
+</p>
 
 </div>
 
 
 
 
-
 <div class="feature-card">
 
-
-<i class="fa-solid fa-language"></i>
-
+<i class="fa-solid fa-chart-simple"></i>
 
 <h3>
-
-Multilingual AI
-
-</h3>
-
-
-<p>
-
-Interact in English, Amharic,
-and Afaan Oromo.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="feature-card">
-
-
-<i class="fa-solid fa-chart-line"></i>
-
-
-<h3>
-
 Business Analytics
-
 </h3>
 
-
 <p>
-
-Help merchants understand sales,
-inventory, and customer demand.
-
+AI predictions for merchants.
 </p>
 
-
 </div>
-
 
 
 </div>
@@ -720,441 +404,17 @@ inventory, and customer demand.
 
 
 
-
-
-
-
-<!-- ================= HOW IT WORKS ================= -->
-
-
-<section class="how">
-
-
-<div class="section-title">
-
-
-<p>
-
-HOW IT WORKS
-
-</p>
-
-
-<h2>
-
-Simple. Fast. Intelligent.
-
-</h2>
-
-
-</div>
-
-
-
-
-
-<div class="steps">
-
-
-
-<div class="step">
-
-
-<div class="number">
-
-01
-
-</div>
-
-
-<h3>
-
-Search
-
-</h3>
-
-
-<p>
-
-Ask AI what you need.
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-<div class="step">
-
-
-<div class="number">
-
-02
-
-</div>
-
-
-<h3>
-
-Compare
-
-</h3>
-
-
-<p>
-
-Find prices and nearby sellers.
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-<div class="step">
-
-
-<div class="number">
-
-03
-
-</div>
-
-
-<h3>
-
-Buy
-
-</h3>
-
-
-<p>
-
-Connect with trusted merchants.
-
-</p>
-
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<!-- ================= WHY MERCATO AI ================= -->
-
-
-<section class="why">
-
-
-<div class="why-content">
-
-
-<div>
-
-
-<h2>
-
-Why choose Mercato AI?
-
-</h2>
-
-
-<p>
-
-Traditional marketplaces are difficult to search,
-lack language support, and do not help customers
-make better decisions.
-
-Mercato AI solves this with intelligent search,
-AI recommendations, and merchant tools.
-
-</p>
-
-
-
-<ul>
-
-
-<li>
-
-<i class="fa-solid fa-check"></i>
-
-AI product recommendations
-
-</li>
-
-
-
-<li>
-
-<i class="fa-solid fa-check"></i>
-
-Nearby seller discovery
-
-</li>
-
-
-
-
-<li>
-
-<i class="fa-solid fa-check"></i>
-
-Better business management
-
-</li>
-
-
-
-</ul>
-
-
-</div>
-
-
-
-
-<div class="why-box">
-
-
-<i class="fa-solid fa-robot"></i>
-
-
-<h3>
-
-Your AI Marketplace Assistant
-
-</h3>
-
-
-<p>
-
-Search, compare, and grow your business
-with artificial intelligence.
-
-</p>
-
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<!-- ================= TESTIMONIAL ================= -->
-
-
-<section class="testimonials">
-
-
-<div class="section-title">
-
-
-<p>
-
-USER EXPERIENCE
-
-</p>
-
-
-<h2>
-
-What users say
-
-</h2>
-
-
-</div>
-
-
-
-
-
-<div class="testimonial-container">
-
-
-
-<div class="testimonial-card">
-
-
-<i class="fa-solid fa-quote-left"></i>
-
-
-<p>
-
-"Finding products in Mercato became much easier
-with AI search."
-
-</p>
-
-
-<h4>
-
-Abebe - Buyer
-
-</h4>
-
-
-</div>
-
-
-
-
-
-
-<div class="testimonial-card">
-
-
-<i class="fa-solid fa-quote-left"></i>
-
-
-<p>
-
-"Mercato AI helps me organize products
-and understand customers."
-
-</p>
-
-
-<h4>
-
-Meron - Merchant
-
-</h4>
-
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<!-- ================= CTA ================= -->
-
-
-<section class="cta">
-
-
-<h2>
-
-Ready to experience smarter shopping?
-
-</h2>
-
-
-<p>
-
-Join the future of Ethiopian digital marketplace.
-
-</p>
-
-
-
-<button>
-
-Get Started
-
-</button>
-
-
-</section>
-
-
-
-
-
-
-
-<!-- ================= FOOTER ================= -->
 
 
 <footer>
 
-
-<div class="footer-logo">
-
+<h3>
 Mercato AI
-
-</div>
-
+</h3>
 
 <p>
-
 Buy smarter. Sell faster. Grow with AI.
-
 </p>
-
-
-
-<div class="footer-links">
-
-
-<a href="#">
-
-Home
-
-</a>
-
-
-<a href="#">
-
-Features
-
-</a>
-
-
-<a href="#">
-
-About
-
-</a>
-
-
-<a href="#">
-
-Contact
-
-</a>
-
-
-</div>
-
 
 
 </footer>
@@ -1162,71 +422,45 @@ Contact
 
 
 
+<!-- AI CHAT BUTTON -->
 
-
-
-<!-- ================= AI CHAT BUTTON ================= -->
-
-
-<div class="ai-chat-button">
-
+<div class="ai-chat-button" onclick="openChat()">
 
 <i class="fa-solid fa-robot"></i>
-
 
 </div>
 
 
 
+<!-- AI CHAT BOX -->
 
-
-
-<!-- ================= AI CHAT BOX ================= -->
-
-
-<div class="ai-chat-box">
-
+<div class="ai-chat-box" id="chatBox">
 
 
 <div class="chat-header">
 
-
 🤖 Mercato AI Assistant
 
-
-<span>
-
-×
-
-
-</span>
-
+<span onclick="closeChat()">×</span>
 
 </div>
-
 
 
 
 <div class="chat-body">
 
 
-<p>
+<p class="bot">
 
 Hello 👋
 
-</p>
-
-
-<p>
-
-I can help you find products,
-shops, and services.
+I can help you find products and shops.
 
 </p>
+
 
 
 </div>
-
 
 
 
@@ -1239,12 +473,9 @@ placeholder="Ask AI...">
 
 
 
-<button>
-
-
-<i class="fa-solid fa-paper-plane"></i>
-
-
+<button title="Send message" aria-label="Send message">
+    <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+    <span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Send message</span>
 </button>
 
 
@@ -1253,17 +484,9 @@ placeholder="Ask AI...">
 
 
 </div>
-
-
-
-
-
-
-
 <script src="js/script.js"></script>
 
 
 </body>
-
 
 </html>
