@@ -372,44 +372,21 @@ function searchAI() {
 // =====================================
 
 
-function openProduct() {
+function buyProduct(name, price) {
 
-    window.location.href = "product.html";
-
-}
-
-
-
-function buyProduct() {
-
-
-    let order = {
-
-        product:"Samsung Galaxy S21+",
-
-        price:"38,500 Birr",
-
-        customer:"Abdenet",
-
-        status:"Pending"
-
+    const order = {
+        product: name,
+        price: price,
+        customer: "Abdenet",
+        status: "Pending"
     };
 
-
-
     localStorage.setItem(
-
         "newOrder",
-
         JSON.stringify(order)
-
     );
 
-
-
-    alert("Order sent to seller successfully 🚀");
-
-
+    alert(`${name} ordered successfully! 🚀`);
 }
 
 
@@ -690,39 +667,110 @@ sellerButton.innerHTML =
 // =====================================
 
 
-async function loadProducts() {
+async function loadProducts(){
 
-    try {
+    try{
 
-        const response = await fetch("http://localhost:5000/products");
+        const response = await fetch(
+            "http://localhost:5000/products"
+        );
+
         const products = await response.json();
 
-        const container = document.getElementById("productContainer");
 
-        if (!container) return;
+        const container =
+        document.getElementById("productContainer");
+
+
+        if(!container){
+            return;
+        }
+
 
         container.innerHTML = "";
 
+
         products.forEach(product => {
 
+
             container.innerHTML += `
-                <div class="product-card">
-                    <h3>${product.name}</h3>
-                    <p>${product.price}</p>
-                    <button onclick="buyProduct('${product.name}','${product.price}')">
-                        Buy Now
-                    </button>
-                </div>
+
+            <div class="product-card">
+
+                <h3>${product.name}</h3>
+
+                <p>${product.price}</p>
+
+                <button>
+                    Buy Now
+                </button>
+
+            </div>
+
             `;
+
 
         });
 
-    } catch (error) {
 
-        console.log(error);
+    }
+
+    catch(error){
+
+        console.log(
+            "Error loading products:",
+            error
+        );
 
     }
 
 }
 
+
 loadProducts();
+async function addProduct(){
+
+
+const name =
+document.getElementById("productName").value;
+
+
+const price =
+document.getElementById("productPrice").value;
+
+
+const seller =
+document.getElementById("sellerName").value;
+
+
+
+const response = await fetch(
+"http://localhost:5000/products",
+{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+name:name,
+
+price:price,
+
+seller:seller
+
+})
+
+});
+
+
+const data = await response.json();
+
+
+alert(data.message);
+
+
+}
