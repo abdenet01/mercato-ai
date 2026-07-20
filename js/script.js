@@ -690,42 +690,39 @@ sellerButton.innerHTML =
 // =====================================
 
 
-async function loadProducts(){
+async function loadProducts() {
 
+    try {
 
-try{
+        const response = await fetch("http://localhost:5000/products");
+        const products = await response.json();
 
+        const container = document.getElementById("productContainer");
 
-const response =
-await fetch(
-"http://localhost:5000/products"
-);
+        if (!container) return;
 
+        container.innerHTML = "";
 
+        products.forEach(product => {
 
-const products =
-await response.json();
+            container.innerHTML += `
+                <div class="product-card">
+                    <h3>${product.name}</h3>
+                    <p>${product.price}</p>
+                    <button onclick="buyProduct('${product.name}','${product.price}')">
+                        Buy Now
+                    </button>
+                </div>
+            `;
 
+        });
 
+    } catch (error) {
 
-console.log(products);
+        console.log(error);
 
-
+    }
 
 }
-
-catch(error){
-
-console.log(
-"Backend connection error:",
-error
-);
-
-}
-
-
-}
-
-
 
 loadProducts();
